@@ -1,4 +1,4 @@
-name: Example Workflow
+name: Load Env Variables Example
 
 on: [push]
 
@@ -9,10 +9,15 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Load environment variables from .env
-        uses: beekmanlabs/load-env@v1
-        with:
-          env-file: .env
+      - name: Load environment variables from .env file
+        run: |
+          # Load the .env file and export its content to the GitHub Actions environment
+          set -o allexport
+          if [ -f .env ]; then source .env; fi
+          echo "MY_VARIABLE1=${MY_VARIABLE1}" >> $GITHUB_ENV
+          echo "MY_VARIABLE2=${MY_VARIABLE2}" >> $GITHUB_ENV
+          echo "MY_VARIABLE3=${MY_VARIABLE3}" >> $GITHUB_ENV
+          set +o allexport
 
       - name: Run Python script with env variables
         run: |
