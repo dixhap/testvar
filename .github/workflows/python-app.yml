@@ -21,4 +21,5 @@ jobs:
         env:
           ARM_ENVIRONMENT: ${{ env.ARM_ENVIRONMENT }}
         run: |
+          echo ${{ env.ARM_ENVIRONMENT }}
           python test.py
