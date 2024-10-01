@@ -1,0 +1,19 @@
+name: Example Workflow
+
+on: [push]
+
+jobs:
+  load-env:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Load environment variables from .env
+        uses: beekmanlabs/load-env@v1
+        with:
+          env-file: .env
+
+      - name: Run Python script with env variables
+        run: |
+          python test2.py
