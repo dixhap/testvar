@@ -9,7 +9,7 @@ jobs:
   print-variable:
     runs-on: ubuntu-latest
     env:
-      MY_VARIABLE: ${{ env.MY_VARIABLE }}
+      MY_VARIABLE: demotest
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
