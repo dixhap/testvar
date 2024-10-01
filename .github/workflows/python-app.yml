@@ -9,7 +9,7 @@ jobs:
   print-variable:
     runs-on: ubuntu-latest
     env:
-      MY_VARIABLE: ${{ github.variables.MY_VARIABLE }}
+      MY_VARIABLE: ${{ env.MY_VARIABLE }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
