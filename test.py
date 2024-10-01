@@ -1,8 +1,8 @@
 import os
 
 def main():
-    arm_environment = os.getenv('ARM_ENVIRONMENT')
-    print(f"ARM_ENVIRONMENT variable value: {arm_environment}")
+    my_variable = os.getenv('MY_VARIABLE')
+    print(f"MY_VARIABLE value: {my_variable}")
 
 if __name__ == "__main__":
     main()
