@@ -19,6 +19,6 @@ jobs:
 
       - name: Run Python script
         env:
-          ARM_ENVIRONMENT: ${{ variables.ARM_ENVIRONMENT }}
+          ARM_ENVIRONMENT: ${{ env.ARM_ENVIRONMENT }}
         run: |
           python test.py
