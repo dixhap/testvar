@@ -5,6 +5,8 @@ on: [push]
 jobs:
   load-env:
     runs-on: ubuntu-latest
+    env:
+      MY_VARIABLE: ${{ vars.MY_VARIABLE1}}
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
